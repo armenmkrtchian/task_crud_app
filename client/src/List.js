@@ -97,10 +97,14 @@ class List extends Component {
     render() {
         return (
             
-      <div className="col-md-12">
+      <div className="row justify-content-center">
+          <div className="col-md-8">
+        <div className="card card-default">
+            <div className="card-header">
+            <div className="card-body">
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label htmlFor="title">Title</label>
+                        <label htmlFor="title"></label>
                         <div className="row">
                             <div className="col-md-12">
                                 <input
@@ -113,6 +117,7 @@ class List extends Component {
                                     onChange={this.onChange.bind(this)}
                                 />
                             </div>
+                            
                             <div className="col-md-12">
                                 <textarea 
                                     name="description"
@@ -130,6 +135,7 @@ class List extends Component {
                             type="submit"
                             onClick={this.onSubmit.bind(this)}
                             className="btn btn-success btn-block"
+                            
                         >
                             Submit
                         </button>
@@ -182,7 +188,8 @@ class List extends Component {
                     </tbody>
                 </table>
             </div>
-            
+            </div></div>
+            </div></div>
           
         )
     }
