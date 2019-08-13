@@ -25,7 +25,7 @@ class App extends Component {
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <a className="navbar-brand" href="#">CRUD App</a>
+                    <a className="navbar-brand" href="/">Navbar</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -39,7 +39,7 @@ class App extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12 mx-auto">
-                                <h1 className="text-center">Create your story</h1>
+                                <h1 className="text-center">CRUD App</h1>
                                 <List />
                             </div>
                         </div>
