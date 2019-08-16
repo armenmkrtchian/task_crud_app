@@ -42,12 +42,15 @@ class Stories extends Component {
 
 
           <div>
-          <ul style={{listStyleType: 'none'}}>
+          <ul
+          className="list-group"
+           style={{listStyleType: 'none'}}>
               {this.state.items.map((item, index) => (
                 <li 
-                key={index}>
+                key={index}
+                className="list-group-item ">
                   <NavLink to={link.to}>{item.title}</NavLink>
-                </li>  
+                </li>
               ))
               }
             </ul>

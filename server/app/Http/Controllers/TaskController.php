@@ -19,7 +19,13 @@ class TaskController extends Controller
 
     public function store(Request $request)
     {
+
+        // $this->validate($request, [
+        //     'title' => 'required|unique:posts|max:255',
+        //     'description' => 'required',
+        //     ]);
         return Task::create($request->all());
+
     }
 
     public function update(Request $request, $id)

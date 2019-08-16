@@ -2,11 +2,16 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 
 import Home from "./Home";
-import Stories from "./Stories";
-import Story from "./Story"
+import StoriesList from "./StoriesList";
+import Story from "./Story";
 import CreateStory from "./CreateStory";
 import UpdateStory from "./UpdateStory";
+import { NavLink } from "react-router-dom";
 // import Layout from "./hoc/Layout";
+
+const link1 = { to: "/stories"};
+const link2 = { to: "/story-creator"};
+const link3 = { to: "/story-update"};
 
 class App extends Component {
   constructor(props) {
@@ -20,9 +25,11 @@ class App extends Component {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="/">
+          <NavLink to={'/'}>
+          <div className="navbar-brand">
             Home
-          </a>
+          </div>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -50,18 +57,17 @@ class App extends Component {
                   Stories
                 </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="/stories">
-                    Stories
-                  </a>
-                  <a className="dropdown-item" href="/story-creator">
-                    Create Stories
-                  </a>
-                  <a className="dropdown-item" href="/story-update">
-                    Update stories
-                  </a>
+                  <NavLink to={link1.to}>
+                    <div className="dropdown-item">Stories</div>
+                  </NavLink>
+                  <NavLink to={link2.to}>
+                    <div className="dropdown-item">Create Stories</div>
+                  </NavLink>
+                  <NavLink to={link3.to}>
+                    <div className="dropdown-item">Update stories</div>
+                  </NavLink>
                 </div>
               </li>
-              
             </ul>
           </div>
         </nav>
@@ -69,9 +75,8 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12 mx-auto">
-             
               <Switch>
-                <Route path="/stories" component={Stories} />
+                <Route path="/stories" component={StoriesList} />
                 <Route path="/story-creator" component={CreateStory} />
                 <Route path="/story-update" component={UpdateStory} />
                 <Route path="/story/:id" component={Story} />
