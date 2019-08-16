@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { getList, addItem, deleteItem, updateItem } from "./ListFunctions";
+import { NavLink } from "react-router-dom";
+
+const link = { to: "/stories", label: "{item.title}" };
 
 class CreateStory extends Component {
   constructor() {
@@ -103,6 +106,7 @@ class CreateStory extends Component {
           <div className="card card-default">
             <div className="card-header">
               <div className="card-body">
+                <h1>Create story</h1>
                   <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                       <label htmlFor="title" />
@@ -131,28 +135,16 @@ class CreateStory extends Component {
                         </div>
                       </div>
                     </div>
-                    {!this.state.editDisabled ? (
+                    
                       <button
                         type="submit"
                         onClick={this.onSubmit.bind(this)}
-                        className="btn btn-success btn-block"
+                        className="btn btn-light btn-block-sm"
                       >
-                        Submit
+                          <NavLink to={link.to}>Submit</NavLink>
                       </button>
-                    ) : (
-                      ""
-                    )}
-                    {this.state.editDisabled ? (
-                      <button
-                        type="submit"
-                        onClick={this.onUpdate.bind(this)}
-                        className="btn btn-primary btn-block"
-                      >
-                        Update
-                      </button>
-                    ) : (
-                      ""
-                    )}
+                   
+                    
                   </form>
               </div>
             </div>

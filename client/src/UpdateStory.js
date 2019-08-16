@@ -103,57 +103,59 @@ class UpdateStory extends Component {
           <div className="card card-default">
             <div className="card-header">
               <div className="card-body">
-                <form onSubmit={this.onSubmit}>
-                  <div className="form-group">
-                    <label htmlFor="title" />
-                    <div className="row">
-                      <div className="col-md-12">
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="title"
-                          placeholder="Title"
-                          name="title"
-                          value={this.state.title || ""}
-                          onChange={this.onChange.bind(this)}
-                        />
-                      </div>
+                <h1>Update story</h1>
+             {this.state.editDisabled ? (
+             <form onSubmit={this.onSubmit}>
+                <div className="form-group">
+                  <label htmlFor="title" />
+                  <div className="row">
+                    <div className="col-md-12">
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="title"
+                        placeholder="Title"
+                        name="title"
+                        value={this.state.title || ""}
+                        onChange={this.onChange.bind(this)}
+                      />
+                    </div>
 
-                      <div className="col-md-12">
-                        <textarea
-                          name="description"
-                          id="description"
-                          placeholder="Description"
-                          value={this.state.description || ""}
-                          className="form-control"
-                          onChange={this.onChange.bind(this)}
-                        />
-                      </div>
+                    <div className="col-md-12">
+                      <textarea
+                        name="description"
+                        id="description"
+                        placeholder="Description"
+                        value={this.state.description || ""}
+                        className="form-control"
+                        onChange={this.onChange.bind(this)}
+                      />
                     </div>
                   </div>
-                  {!this.state.editDisabled ? (
-                    <button
-                      type="submit"
-                      onClick={this.onSubmit.bind(this)}
-                      className="btn btn-success btn-block"
-                    >
-                      Submit
-                    </button>
-                  ) : (
-                    ""
-                  )}
-                  {this.state.editDisabled ? (
-                    <button
-                      type="submit"
-                      onClick={this.onUpdate.bind(this)}
-                      className="btn btn-primary btn-block"
-                    >
-                      Update
-                    </button>
-                  ) : (
-                    ""
-                  )}
-                </form>
+                </div>
+                {!this.state.editDisabled ? (
+                  <button
+                    type="submit"
+                    onClick={this.onSubmit.bind(this)}
+                    className="btn btn-success btn-block"
+                  >
+                    Submit
+                  </button>
+                ) : (
+                  ""
+                )}
+                {this.state.editDisabled ? (
+                  <button
+                    type="submit"
+                    onClick={this.onUpdate.bind(this)}
+                    className="btn btn-primary btn-block"
+                  >
+                    Update
+                  </button>
+                ) : (
+                  ""
+                )}
+    </form>): null}
               </div>
             </div>
           </div>

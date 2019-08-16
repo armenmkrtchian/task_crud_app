@@ -69,7 +69,7 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12 mx-auto">
-              <h1 className="text-center">CRUD App</h1>
+             
               <Switch>
                 <Route path="/stories" component={Stories} />
                 <Route path="/story-creator" component={CreateStory} />
